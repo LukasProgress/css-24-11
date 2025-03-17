@@ -1,0 +1,46 @@
+h1 {
+    color: darkred;
+}
+
+p {
+    font-size: 18px;
+}
+
+#haupttitel {
+    font-weight: bold;
+}
+
+.hervorgehoben, .markiert {
+    color: red;
+}
+
+.inhalt h2 {
+    text-decoration: underline;
+}
+
+/*Input Felder sollen Schwarz mit weißer Schrift sein, wenn fokussiert*/
+input:focus {
+    background-color: black;
+    color: white;
+}
+
+button:hover {
+    background-color: green;
+    color: beige;
+}
+
+#liste :first-child, #liste :last-child {
+    font-weight: bold;
+}
+
+li::marker {
+    content: "🐙 ";
+}
+
+ul :first-child::first-letter {
+    color: green;
+}
+
+input[type="email"] {
+    border: red 2px solid;
+}
