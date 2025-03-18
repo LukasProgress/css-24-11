@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        [navigation] {
+            position: fixed;
+            top: 0px;
+            left: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        [navigation] > a {
+            margin-left: -26px;
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #575757;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 18px;
+            transition: margin-left 1.0s;
+        }
+
+        [navigation] > a:hover {
+            margin-left: 0px;
+        }
+
+        [placeholder] {
+            width: 100%;
+            height: 300px;
+        }
+
+        [frame] {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            gap: 10px;
+            padding: 60px;
+        }
+
+        [frame] > [element] {
+            font-size: 2rem;
+            border: 3px solid #222222;
+        }
+
+        [frame="1"] {
+            grid-template-columns: auto auto;
+            grid-template-rows: auto 20%;
+            grid-template-areas:
+                'area1 area2'
+                'area3 area3';
+        }
+
+        [frame="2"] {
+            grid-template-columns: 20% auto auto;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                'area2 area1 area1'
+                'area2 area3 area4';
+        }
+
+        [frame="3"] {
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 10% 10% auto 20%;
+            grid-template-areas:
+                'area1 area1 area1'
+                'area2 area2 area2'
+                'area3 area4 area5'
+                'area6 area6 area6';
+        }
+
+        [frame="4"] {
+            grid-template-columns: auto auto 20%;
+            grid-template-rows: auto 20%;
+            grid-template-areas:
+                'area1 area2 area3'
+                'area4 area4 area3';
+        }
+
+        [frame="4"] > [new-grid] {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 10% auto auto;
+            grid-template-areas:
+                'area2-1 area2-1'
+                'area2-2 area2-3'
+                'area2-4 area2-4';
+            gap: 10px;
+            padding: 10px;
+        }
+
+        [frame="4"] > [new-grid] > [element] {
+            border: 3px solid #222222;
+        }
+
+        [element] {
+            padding: 10px;
+        }
+    </style>
+
+    <div navigation>
+        <a href="#frame1">1</a>
+        <a href="#frame2">2</a>
+        <a href="#frame3">3</a>
+        <a href="#frame4">4</a>
+    </div>
+
+    <div frame="1" id="frame1">
+        <div element style="grid-area: area1;">1</div>
+        <div element style="grid-area: area2;">2</div>
+        <div element style="grid-area: area3;">3</div>
+    </div>
+
+    <div placeholder></div>
+
+    <div frame="2" id="frame2">
+        <div element style="grid-area: area1;">1</div>
+        <div element style="grid-area: area2;">2</div>
+        <div element style="grid-area: area3;">3</div>
+        <div element style="grid-area: area4;">4</div>
+    </div>
+
+    <div placeholder></div>
+
+    <div frame="3" id="frame3">
+        <div element style="grid-area: area1;">1</div>
+        <div element style="grid-area: area2;">2</div>
+        <div element style="grid-area: area3;">3</div>
+        <div element style="grid-area: area4;">4</div>
+        <div element style="grid-area: area5;">5</div>
+        <div element style="grid-area: area6;">6</div>
+    </div>
+
+    <div placeholder></div>
+
+    <div frame="4" id="frame4">
+        <div element style="grid-area: area1;">1</div>
+        <div element new-grid style="grid-area: area2;">
+            <div element style="grid-area: area2-1;">2.1</div>
+            <div element style="grid-area: area2-2;">2.2</div>
+            <div element style="grid-area: area2-3;">2.3</div>
+            <div element style="grid-area: area2-4;">2.4</div>
+        </div>
+        <div element style="grid-area: area3;">3</div>
+        <div element style="grid-area: area4;">4</div>
+    </div>
+</body>
+</html>
